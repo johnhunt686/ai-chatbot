@@ -1,0 +1,27 @@
+{
+  "type": "module",
+  "dependencies": {
+    "ai": "^6.0.116",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "openai": "^6.27.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "ai-chatbot",
+  "description": "",
+  "version": "1.0.0",
+  "main": "chatbot.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnhunt686/ai-chatbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnhunt686/ai-chatbot/issues"
+  },
+  "homepage": "https://github.com/johnhunt686/ai-chatbot#readme"
+}

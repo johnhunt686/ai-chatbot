@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic LLM-frontend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+
+        <!-- Scrollable message list -->
+        <div class="chat-messages" id="chat-messages">
+            <!-- Messages dynamically inserted here -->
+        </div>
+        <!-- Input area fixed at bottom -->
+        <div class="chat-input">
+            <input id="text-input" type="text" placeholder="Enter text here...">
+            <button id="text-confirm">Send</button>
+        </div>
+
+    </div>
+    <script src="chatbot.js"></script>
+</body>
+</html>
