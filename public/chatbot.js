@@ -23,14 +23,21 @@ function addMessage(text, sender, side) {
 async function handleSend() {
     const text = chatInput.value.trim();
 
-    if (text === "") return;
+    if (!text) return;
+
+    chatInput.value = "";
 
     addMessage(text, "user","right");
 
     const reply = await askAI(text)
-    addMessage(reply, "openAI","left");
 
-    chatInput.value = "";
+    try {
+      const reply = await askAI(text);
+      addMessage(reply, "openAI", "left");
+    } catch (err) {
+      addMessage("Error: failed to get response", "system", "left");
+      console.error(err);
+    }   
 }
 
 async function askAI(message) {
@@ -53,17 +60,7 @@ sendBtn.addEventListener("click", handleSend);
 // Send when pressing Enter
 chatInput.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
+        event.preventDefault();
         handleSend();
     }
 });
-
-
-sendBtn.onclick = async () => {
-  const text = chatInput.value;
-
-  addMessage(text, "user", "right");
-
-  const reply = await askAI(text);
-
-  addMessage(reply, "ai", "left");
-};
